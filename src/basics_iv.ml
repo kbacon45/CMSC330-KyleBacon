@@ -47,7 +47,5 @@ let indexTup lst = fold (fun (idx,tup) elem  -> ((idx+1,(idx,elem)::tup) ) ) (1,
 
 
 
-let every_xth x lst = fold (fun h a ->
-if ( (modCheck x)  )
-) lst [1]
+let every_xth x lst = failwith "no implemented"   
 
