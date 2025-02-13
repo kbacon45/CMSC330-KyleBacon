@@ -39,13 +39,20 @@ else false
 
 
 
-
 let indexTup lst = fold (fun (idx,tup) elem  -> ((idx+1,(idx,elem)::tup) ) ) (1,[]) lst
 
 
+let rmvCountTup lst = 
+match lst with
+(num, lst) -> lst 
 
 
 
-
-let every_xth x lst = failwith "no implemented"   
+let every_xth x lst = 
+let tupList = rmvCountTup (indexTup lst) in
+fold (fun a h ->
+match h with
+(idx,elem) -> if ((modCheck x) idx)  then elem::a else a
+)
+[] tupList  
 
